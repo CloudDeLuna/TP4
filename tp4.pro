@@ -1,18 +1,28 @@
+INCLUDEPATH += $$PWD
+SOURCES += $$PWD/openglwindow.cpp \
+    gamecamera.cpp \
+    gamewindow.cpp \
+    gameserver.cpp \
+    gameclient.cpp \
+    thread.cpp \
+    filemanager.cpp \
+    plyobject.cpp
+HEADERS += $$PWD/openglwindow.h \
+    gamecamera.h \
+    gamewindow.h \
+    gameserver.h \
+    gameclient.h \
+    thread.h \
+    filemanager.h \
+    plyobject.h
+
+SOURCES += \
+    main.cpp
+
+target.path = $$[QT_INSTALL_EXAMPLES]/gui/openglwindow
+QT += network
+INSTALLS += target
 QMAKE_MAC_SDK = macosx10.11
 
-QMAKE_CXXFLAGS += -stdlib=libc++ -std=c++11
-
-INCLUDEPATH += /opt/local/include
-LIBS += -stdlib=libc++
-
-SOURCES += $$PWD/openglwindow.cpp \
-    main.cpp \
-    trianglewindow.cpp
-HEADERS += $$PWD/openglwindow.h \
-    trianglewindow.h
-
-target.path = .
-
-INSTALLS += target
-
-RESOURCES += gestionnaire.qrc
+RESOURCES += \
+    gestionnaire.qrc
